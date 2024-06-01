@@ -91,9 +91,7 @@
             android:layout_height="60dp"
             app:cardCornerRadius="30dp"
             android:layout_margin="3dp"
-            android:elevation="10dp"
-
-            >
+            android:elevation="10dp">
 
             <ImageView
                 android:id="@+id/authenticate"
@@ -101,7 +99,6 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/biometric"
                 android:scaleType="centerCrop" />
-
 
         </androidx.cardview.widget.CardView>
 
