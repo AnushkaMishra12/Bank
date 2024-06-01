@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Bank</string>
+    <string name="authenticate_with_biometric">AUTHENTICATE WITH BIOMETRIC</string>
+    <string name="use_login_pin_or_biometric">Use login PIN or biometric</string>
+    <string name="unlock_forget_login_pin">Unlock/Forget login PIN?</string>
+    <string name="_1234">1234</string>
+</resources>
