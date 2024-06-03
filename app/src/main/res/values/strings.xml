@@ -4,4 +4,15 @@
     <string name="use_login_pin_or_biometric">Use login PIN or biometric</string>
     <string name="unlock_forget_login_pin">Unlock/Forget login PIN?</string>
     <string name="_1234">1234</string>
+    <string name="hi_users">Hi Users,</string>
+    <string name="en_hi">En/Hi</string>
+    <string name="quick_review_n_balance">Quick review \n balance</string>
+    <string name="more">More</string>
+    <string name="scan_qr">Scan QR</string>
+    <string name="x_xx_xxx">₹ X,XX,XXX</string>
+    <string name="available_balance">Available balance</string>
+    <string name="transaction_history">Transaction History</string>
+    <string name="view_all_accounts">View all accounts</string>
+    <string name="what_s_trending">What\'s trending</string>
+    <string name="my_bob">My bob</string>
 </resources>

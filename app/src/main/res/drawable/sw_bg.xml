@@ -4,9 +4,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <solid
-        android:color="@color/white"/>
+        android:color="?attr/appWindowBackground"/>
     <corners
         android:topLeftRadius="30dp"
         android:bottomLeftRadius="30dp"/>
+    <stroke
+        android:color="?attr/textColor"
+        android:width="1sp"/>
 
 </shape>

@@ -3,9 +3,9 @@ package com.example.bank;
 import static androidx.biometric.BiometricPrompt.ERROR_NEGATIVE_BUTTON;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -43,11 +43,13 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         ArrayList<BannerData> list = new ArrayList<>();
-        list.add(new BannerData(R.drawable.img2));
-        list.add(new BannerData(R.drawable.img2));
-        list.add(new BannerData(R.drawable.img2));
-        list.add(new BannerData(R.drawable.img2));
-        list.add(new BannerData(R.drawable.img2));
+
+        list.add(new BannerData(R.drawable.img_3));
+        list.add(new BannerData(R.drawable.img_3));
+        list.add(new BannerData(R.drawable.img_3));
+        list.add(new BannerData(R.drawable.img_3));
+        list.add(new BannerData(R.drawable.img_3));
+
         RecyclerBannerAdapter recyclerBannerAdapter = new RecyclerBannerAdapter(list);
         banner.setAdapter(recyclerBannerAdapter);
         int COLUMN_COUNT1 = 1;
@@ -71,7 +73,6 @@ public class LoginActivity extends AppCompatActivity {
 
     @SuppressLint("SwitchIntDef")
     private void checkAndAuthenticate() {
-
         BiometricManager biometricManager = BiometricManager.from(this);
         switch (biometricManager.canAuthenticate()) {
 
@@ -104,7 +105,8 @@ public class LoginActivity extends AppCompatActivity {
     private void snack(String text) {
         View view = findViewById(R.id.view);
         Snackbar snackbar = Snackbar.make(view, text, Snackbar.LENGTH_LONG);
-        snackbar.setBackgroundTint(getColor(R.color.white));
+        snackbar.setBackgroundTint(getColor(R.color.colorPrimary));
+        snackbar.setTextColor(getResources().getColor(R.color.colorAccent));
         snackbar.show();
     }
 
@@ -119,6 +121,8 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
             snack("Authenticated");
+            Intent i =new Intent(LoginActivity.this,DashBoardActivity.class);
+            startActivity(i);
         }
 
         @Override
