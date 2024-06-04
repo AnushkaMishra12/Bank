@@ -13,11 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/appWindowBackground"
-        android:elevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
+        android:elevation="8dp"
+      >
 
         <ImageView
             android:layout_width="100dp"
@@ -46,15 +46,22 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_gravity="end"
+            app:tint="?attr/iconColor"
             android:layout_margin="10dp"
             android:src="@drawable/seach" />
 
     </androidx.appcompat.widget.Toolbar>
-
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
+      >
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="80dp">
+        android:id="@+id/nested_scroll"
+        android:layout_marginBottom="100dp"
+        >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -64,7 +71,7 @@
 
        <LinearLayout
            android:layout_width="match_parent"
-           android:layout_height="180dp"
+           android:layout_height="150dp"
            android:layout_marginEnd="20dp"
            android:layout_marginStart="20dp"
            android:elevation="8dp"
@@ -84,7 +91,7 @@
            android:textStyle="bold"
            android:padding="8dp"
            android:textAlignment="center"
-           android:textColor="?attr/appWindowBackground"/>
+           android:textColor="?attr/textColor"/>
 
            <TextView
                android:layout_width="match_parent"
@@ -94,7 +101,7 @@
                android:textStyle="bold"
                android:fontFamily="sans-serif"
                android:textAlignment="center"
-               android:textColor="?attr/appWindowBackground"/>
+               android:textColor="?attr/textColor"/>
 
        </LinearLayout>
 
@@ -149,7 +156,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/trend_recycler"
             android:layout_width="match_parent"
-            android:layout_height="200dp"/>
+            android:layout_height="wrap_content"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -168,6 +175,36 @@
 
     </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+        <ImageView
+            android:id="@+id/setting"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/card_bg"
+            android:elevation="10dp"
+            android:src="@drawable/setting"
+            android:padding="15dp"
+            app:tint="?attr/buttonBackground" />
 
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottomAppBar"
+            android:layout_gravity="bottom"
+            app:tint="?attr/iconColor"
+            android:background="@color/white"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+          >
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bottomNavigationView"
+                app:labelVisibilityMode="labeled"
+                app:tint="?attr/iconColor"
+                android:background="@android:color/transparent"
+                app:menu="@menu/menu"/>
+        </com.google.android.material.bottomappbar.BottomAppBar>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+   </androidx.constraintlayout.widget.ConstraintLayout>

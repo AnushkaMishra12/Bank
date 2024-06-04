@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Bank"
         tools:targetApi="31">
         <activity
+            android:name=".SettingActivity"
+            android:exported="false" />
+        <activity
             android:name=".DashBoardActivity"
             android:exported="false" />
         <activity

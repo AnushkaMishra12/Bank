@@ -1,6 +1,8 @@
 [versions]
 agp = "8.4.0"
+androidColorPicker = "1.0.2"
 biometric = "1.1.0"
+colorpickerpreference = "1.0.2"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
@@ -8,9 +10,14 @@ appcompat = "1.7.0"
 material = "1.12.0"
 activity = "1.9.0"
 constraintlayout = "2.1.4"
+materialcolorpicker = "1.0.7"
+multidex = "2.0.1"
+runner = "1.0.2"
 
 [libraries]
+android-color-picker = { module = "uk.co.jordanrobinson:android-color-picker", version.ref = "androidColorPicker" }
 biometric = { module = "androidx.biometric:biometric", version.ref = "biometric" }
+colorpickerpreference = { module = "com.github.skydoves:colorpickerpreference", version.ref = "colorpickerpreference" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -18,6 +25,9 @@ appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "a
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+materialcolorpicker = { module = "com.turki-alkhateeb:materialcolorpicker", version.ref = "materialcolorpicker" }
+multidex = { module = "androidx.multidex:multidex", version.ref = "multidex" }
+runner = { module = "com.a ndroid.support.test:runner", version.ref = "runner" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
