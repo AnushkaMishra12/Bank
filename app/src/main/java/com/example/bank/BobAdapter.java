@@ -41,9 +41,6 @@ public class BobAdapter extends RecyclerView.Adapter<BobAdapter.Holder> {
         public Holder(@NonNull View itemView) {
             super(itemView);
             banner_image = itemView.findViewById(R.id.trend_im);
-
         }
-
     }
-
 }

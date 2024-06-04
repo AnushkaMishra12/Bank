@@ -46,7 +46,7 @@ public class SettingActivity extends AppCompatActivity {
         }
 
 
-        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_setting);
+        final Toolbar toolbar = findViewById(R.id.toolbar_setting);
         toolbar.setTitle("Settings");
         toolbar.setBackgroundColor(Constant.color);
 

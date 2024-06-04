@@ -6,14 +6,13 @@
     android:layout_height="wrap_content"
     android:layout_margin="20dp"
     android:gravity="center"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:elevation="8dp"
-        android:layout_gravity="center"
-     >
+        android:layout_gravity="center">
 
         <ImageView
             android:id="@+id/trend_im"
