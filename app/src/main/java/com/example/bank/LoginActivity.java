@@ -35,9 +35,7 @@ public class LoginActivity extends AppCompatActivity {
 
         banner=findViewById(R.id.banner);
         auth=findViewById(R.id.authenticate);
-
         auth.setOnClickListener(v -> checkAndAuthenticate());
-
         if (biometricPrompt == null) {
             biometricPrompt = new BiometricPrompt(this, executor, callback);
         }
