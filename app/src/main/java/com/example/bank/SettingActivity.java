@@ -51,12 +51,31 @@ public class SettingActivity extends AppCompatActivity {
         toolbar.setBackgroundColor(Constant.color);
 
         methods = new Methods();
-        button = findViewById(R.id.button_color);
+        button = (Button) findViewById(R.id.button_color);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         editor = sharedPreferences.edit();
 
         colorize();
 
+//        button.setOnClickListener(v -> {
+//            ColorChooserDailog dialog = new ColorChooserDailog(SettingActivity.this);
+//            dialog.setTitle("Select");
+//            dialog.setColorListener((v1, color) -> {
+//                colorize();
+//                Constant.color=color;
+//
+//                methods.setColorTheme();
+//                editor.putInt("color", color);
+//                editor.putInt("theme",Constant.theme);
+//                editor.commit();
+//
+//                Intent intent = new Intent(SettingActivity.this, LoginActivity.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                startActivity(intent);
+//            });
+//
+//            dialog.show();
+//        });
     }
 
     @Override

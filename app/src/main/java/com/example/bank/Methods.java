@@ -3,9 +3,9 @@ package com.example.bank;
 
 public class Methods {
 
-    public void setColorTheme(){
+    public void setColorTheme() {
 
-        switch (Constant.color){
+        switch (Constant.color) {
             case 0xffF44336:
                 Constant.theme = R.style.AppTheme_red;
                 break;

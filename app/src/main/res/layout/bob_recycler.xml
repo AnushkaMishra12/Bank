@@ -12,8 +12,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:elevation="8dp"
-        android:layout_gravity="center"
-     >
+        android:layout_gravity="center">
 
         <ImageView
             android:id="@+id/trend_im"
@@ -27,12 +26,12 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/scan_qr"
         android:textSize="13sp"
         android:layout_marginTop="5dp"
         android:textColor="?attr/textColor"/>
+
 
 </LinearLayout>

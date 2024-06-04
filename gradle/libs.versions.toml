@@ -2,6 +2,7 @@
 agp = "8.4.0"
 androidColorPicker = "1.0.2"
 biometric = "1.1.0"
+colorpicker = "1.1.7"
 colorpickerpreference = "1.0.2"
 junit = "4.13.2"
 junitVersion = "1.1.5"
@@ -12,11 +13,13 @@ activity = "1.9.0"
 constraintlayout = "2.1.4"
 materialcolorpicker = "1.0.7"
 multidex = "2.0.1"
+preference = "1.2.1"
 runner = "1.0.2"
 
 [libraries]
 android-color-picker = { module = "uk.co.jordanrobinson:android-color-picker", version.ref = "androidColorPicker" }
 biometric = { module = "androidx.biometric:biometric", version.ref = "biometric" }
+colorpicker = { module = "com.github.duanhong169:colorpicker", version.ref = "colorpicker" }
 colorpickerpreference = { module = "com.github.skydoves:colorpickerpreference", version.ref = "colorpickerpreference" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -27,6 +30,7 @@ activity = { group = "androidx.activity", name = "activity", version.ref = "acti
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 materialcolorpicker = { module = "com.turki-alkhateeb:materialcolorpicker", version.ref = "materialcolorpicker" }
 multidex = { module = "androidx.multidex:multidex", version.ref = "multidex" }
+preference = { module = "androidx.preference:preference", version.ref = "preference" }
 runner = { module = "com.a ndroid.support.test:runner", version.ref = "runner" }
 
 [plugins]
