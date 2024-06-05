@@ -6,31 +6,31 @@ public class Methods {
     public void setColorTheme() {
 
         switch (Constant.color) {
-            case 0xffF44336:
+            case 1:
                 Constant.theme = R.style.AppTheme_red;
                 break;
-            case 0xffE91E63:
+            case 2:
                 Constant.theme = R.style.AppTheme_pink;
                 break;
-            case 0xff9C27B0:
+            case 3:
                 Constant.theme = R.style.AppTheme_darpink;
                 break;
-            case 0xff673AB7:
+            case 4:
                 Constant.theme = R.style.AppTheme_violet;
                 break;
-            case 0xff3F51B5:
+            case 5:
                 Constant.theme = R.style.AppTheme_blue;
                 break;
-            case 0xff03A9F4:
+            case 6:
                 Constant.theme = R.style.AppTheme_skyblue;
                 break;
-            case 0xff4CAF50:
+            case 7:
                 Constant.theme = R.style.AppTheme_green;
                 break;
-            case 0xff9E9E9E:
+            case 8:
                 Constant.theme = R.style.AppTheme_grey;
                 break;
-            case 0xff795548:
+            case 9:
                 Constant.theme = R.style.AppTheme_brown;
                 break;
             default:

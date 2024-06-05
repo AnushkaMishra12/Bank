@@ -15,6 +15,9 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.skydoves.colorpickerpreference.ColorPickerDialog;
+import com.turkialkhateeb.materialcolorpicker.ColorChooserDialog;
+
 
 public class SettingActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences, app_preferences;
@@ -26,11 +29,10 @@ public class SettingActivity extends AppCompatActivity {
     int themeColor;
     int appColor;
     Constant constant;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setting);
+
         app_preferences = PreferenceManager.getDefaultSharedPreferences(this);
         appColor = app_preferences.getInt("color", 0);
         appTheme = app_preferences.getInt("theme", 0);
@@ -39,43 +41,43 @@ public class SettingActivity extends AppCompatActivity {
 
         if (themeColor == 0){
             setTheme(Constant.theme);
-        }else if (appTheme == 0){
+        }else if (appTheme == 1){
             setTheme(Constant.theme);
         }else{
             setTheme(appTheme);
         }
-
+        setContentView(R.layout.activity_setting);
 
         final Toolbar toolbar = findViewById(R.id.toolbar_setting);
         toolbar.setTitle("Settings");
         toolbar.setBackgroundColor(Constant.color);
 
         methods = new Methods();
-        button = (Button) findViewById(R.id.button_color);
+        button = findViewById(R.id.button_color);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         editor = sharedPreferences.edit();
 
         colorize();
 
-//        button.setOnClickListener(v -> {
-//            ColorChooserDailog dialog = new ColorChooserDailog(SettingActivity.this);
-//            dialog.setTitle("Select");
-//            dialog.setColorListener((v1, color) -> {
-//                colorize();
-//                Constant.color=color;
-//
-//                methods.setColorTheme();
-//                editor.putInt("color", color);
-//                editor.putInt("theme",Constant.theme);
-//                editor.commit();
-//
-//                Intent intent = new Intent(SettingActivity.this, LoginActivity.class);
-//                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//                startActivity(intent);
-//            });
-//
-//            dialog.show();
-//        });
+        button.setOnClickListener(v -> {
+            ColorChooserDialog dialog = new ColorChooserDialog(SettingActivity.this);
+            dialog.setTitle("Select");
+            dialog.setColorListener((v1, color) -> {
+                colorize();
+                Constant.color = color;
+
+                methods.setColorTheme();
+                editor.putInt("color", color);
+                editor.putInt("theme",Constant.theme);
+                editor.commit();
+
+                Intent intent = new Intent(SettingActivity.this, LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            });
+
+            dialog.show();
+        });
     }
 
     @Override

@@ -4,7 +4,9 @@ import static androidx.biometric.BiometricPrompt.ERROR_NEGATIVE_BUTTON;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -28,10 +30,31 @@ public class LoginActivity extends AppCompatActivity {
     private final Executor executor = Executors.newSingleThreadExecutor();
     RecyclerView banner;
     ImageView auth;
+    Constant constant;
+    SharedPreferences.Editor editor;
+    SharedPreferences app_preferences;
+    int appTheme;
+    int themeColor;
+    int appColor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
+
+
+        app_preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        appColor = app_preferences.getInt("color", 0);
+        appTheme = app_preferences.getInt("theme", 0);
+        themeColor = appColor;
+        Constant.color = appColor;
+
+        if (themeColor == 0) {
+            setTheme(Constant.theme);
+        } else if (appTheme == 1) {
+            setTheme(Constant.theme);
+        } else {
+            setTheme(appTheme);
+        }
 
         banner=findViewById(R.id.banner);
         auth=findViewById(R.id.authenticate);
@@ -103,7 +126,15 @@ public class LoginActivity extends AppCompatActivity {
     private void snack(String text) {
         View view = findViewById(R.id.view);
         Snackbar snackbar = Snackbar.make(view, text, Snackbar.LENGTH_LONG);
-        snackbar.setBackgroundTint(getColor(R.color.colorPrimary));
+        if (themeColor == 0 ) {
+            setTheme(Constant.theme);
+            snackbar.setBackgroundTint(Constant.theme);
+        } else if (appTheme == 1) {
+            setTheme(Constant.theme);
+            snackbar.setBackgroundTint(Constant.theme);
+        } else {
+            setTheme(appTheme);
+        }
         snackbar.setTextColor(getResources().getColor(R.color.colorAccent));
         snackbar.show();
     }

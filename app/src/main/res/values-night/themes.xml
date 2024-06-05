@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Base.Theme.Bank" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.Bank" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
         <item name="colorPrimary">#EEFF41</item>
         <item name="colorPrimaryDark">#2D2E2E</item>
         <item name="colorAccent">#090909</item>

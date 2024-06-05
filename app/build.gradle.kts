@@ -37,6 +37,10 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation(libs.biometric)
+    implementation (libs.colorpickerpreference)
+    implementation (libs.materialcolorpicker)
+    implementation (libs.multidex)
+
 
 
 }
