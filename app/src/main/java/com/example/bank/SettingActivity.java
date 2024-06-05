@@ -65,7 +65,6 @@ public class SettingActivity extends AppCompatActivity {
             dialog.setColorListener((v1, color) -> {
                 colorize();
                 Constant.color = color;
-
                 methods.setColorTheme();
                 editor.putInt("color", color);
                 editor.putInt("theme",Constant.theme);

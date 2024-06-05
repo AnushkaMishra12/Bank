@@ -20,7 +20,6 @@ public class DashBoardActivity extends AppCompatActivity {
     RecyclerView trendRecycler;
     RecyclerView bobRecycler;
     BottomNavigationView bottomNavigationView;
-    Fragment fragment;
     ImageView setting;
 
     @Override
