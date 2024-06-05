@@ -16,7 +16,7 @@
         android:text="@string/bob_nworld"
         android:fontFamily="@font/aleo"
         android:textAlignment="center"
-        android:textSize="35sp"
+        android:textSize="100sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,10 +28,10 @@
         android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:layout_gravity="center"
-        android:tint="@color/white"
         android:layout_margin="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:src="@drawable/bob_logo1" />
+        android:src="@drawable/bob_logo1"
+        app:tint="@color/white" />
 </androidx.constraintlayout.widget.ConstraintLayout>

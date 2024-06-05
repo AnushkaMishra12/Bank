@@ -7,4 +7,5 @@
         android:endColor="@color/red"
         android:startColor="#FF6E40"/>
 
+
 </shape>
