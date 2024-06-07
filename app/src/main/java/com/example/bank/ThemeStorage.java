@@ -15,6 +15,5 @@ public class ThemeStorage {
     public static String getThemeColor(Context context){
         SharedPreferences sharedpreferences = context.getSharedPreferences("theme_data", Context.MODE_PRIVATE);
         return sharedpreferences.getString("theme", "orange");
-
     }
 }
