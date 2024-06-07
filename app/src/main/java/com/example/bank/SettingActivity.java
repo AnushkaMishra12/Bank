@@ -8,11 +8,8 @@ import static com.example.bank.ThemeStorage.setThemeColor;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -27,11 +24,7 @@ public class SettingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setCustomizedThemes(this, getThemeColor(this));
         setContentView(R.layout.activity_setting);
-
-        Window w = getWindow();
-        w.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        w.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-
+        getSupportActionBar().hide();
         color_choose = findViewById(R.id.color_choose);
         button = findViewById(R.id.button_color);
         button.setOnClickListener(v -> {
@@ -49,8 +42,7 @@ public class SettingActivity extends AppCompatActivity {
     private void chooseColor() {
         showCustomAlertDialog(this, chosenColor -> {
             if (chosenColor.equals(getThemeColor(getApplicationContext()))) {
-                Toast.makeText(this, "already choosed color", Toast.LENGTH_SHORT).show();
-                return;
+              recreate();
             }
             Log.d(TAG, chosenColor);
             setThemeColor(getApplicationContext(), chosenColor);

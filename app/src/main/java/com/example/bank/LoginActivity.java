@@ -11,6 +11,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -38,6 +40,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setCustomizedThemes(this,getThemeColor(this));
         setContentView(R.layout.login_activity);
+
+        getSupportActionBar().hide();
+
         banner=findViewById(R.id.banner);
         auth=findViewById(R.id.authenticate);
         auth.setOnClickListener(v -> checkAndAuthenticate());

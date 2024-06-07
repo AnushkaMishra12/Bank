@@ -10,9 +10,11 @@ public class ThemeStorage {
         SharedPreferences.Editor editor = sharedpreferences.edit();
         editor.putString("theme", themeColor);
         editor.apply();
+
     }
     public static String getThemeColor(Context context){
         SharedPreferences sharedpreferences = context.getSharedPreferences("theme_data", Context.MODE_PRIVATE);
-        return sharedpreferences.getString("theme", "grey");
+        return sharedpreferences.getString("theme", "orange");
+
     }
 }

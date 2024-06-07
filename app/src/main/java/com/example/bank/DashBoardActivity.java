@@ -31,11 +31,7 @@ public class DashBoardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setCustomizedThemes(this,getThemeColor(this));
         setContentView(R.layout.activity_dash_board);
-
-        Window w = getWindow();
-        w.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        w.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-
+        getSupportActionBar().hide();
         recyclerView = findViewById(R.id.reward_recycler);
         trendRecycler = findViewById(R.id.trend_recycler);
         bobRecycler=findViewById(R.id.bob_recycler);

@@ -8,14 +8,14 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:id="@+id/blueColor"
+            android:id="@+id/redColor"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
-            android:background="#3F51B5"
+            android:background="#C6130D"
             android:textColor="#00000000"
             android:gravity="center"
-            android:text="blue"/>
+            android:text="@string/blue"/>
         <TextView
             android:id="@+id/blackColor"
             android:layout_width="50dp"
@@ -24,65 +24,16 @@
             android:background="#000"
             android:textColor="#00000000"
             android:gravity="center"
-            android:text="black"/>
+            android:text="@string/black"/>
         <TextView
-            android:id="@+id/redColor"
+            android:id="@+id/blueColor"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
-            android:background="#F10000"
+            android:background="#0A1450"
             android:textColor="#00000000"
             android:gravity="center"
-            android:text="red"/>
-        <TextView
-            android:id="@+id/purpleColor"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:background="#79008E"
-            android:textColor="#00000000"
-            android:gravity="center"
-            android:text="purple"/>
+            android:text="@string/red"/>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/greenColor"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:background="#009688"
-            android:textColor="#00000000"
-            android:gravity="center"
-            android:text="green"/>
-        <TextView
-            android:id="@+id/greyColor"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:background="#777777"
-            android:textColor="#00000000"
-            android:gravity="center"
-            android:text="grey"/>
-        <TextView
-            android:id="@+id/orangeColor"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:background="#FF5722"
-            android:textColor="#00000000"
-            android:gravity="center"
-            android:text="orange"/>
-        <TextView
-            android:id="@+id/pinkColor"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:background="#E91E63"
-            android:textColor="#00000000"
-            android:gravity="center"
-            android:text="pink"/>
-    </LinearLayout>
+
 </LinearLayout>

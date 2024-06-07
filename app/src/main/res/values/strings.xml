@@ -19,4 +19,9 @@
     <string name="theme">Theme</string>
     <string name="custom_settings">CUSTOM SETTINGS</string>
     <string name="bob_nworld">bob \nWorld</string>
+    <string name="choose_color">Choose Color</string>
+    <string name="red">red</string>
+    <string name="black">black</string>
+    <string name="blue">blue</string>
+    <string name="purple">purple</string>
 </resources>
