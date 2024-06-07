@@ -188,24 +188,24 @@
             android:padding="15dp"
             app:tint="?attr/buttonBackground" />
 
-        <com.google.android.material.bottomappbar.BottomAppBar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/bottomAppBar"
-            android:layout_gravity="bottom"
-            app:tint="?attr/iconColor"
-            android:background="@color/white"
+<!--        <com.google.android.material.bottomappbar.BottomAppBar-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/bottomAppBar"-->
+<!--            android:layout_gravity="bottom"-->
+<!--            app:tint="?attr/iconColor"-->
+<!--            android:background="@color/white"-->
 
-          >
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/bottomNavigationView"
-                app:labelVisibilityMode="labeled"
-                app:tint="?attr/iconColor"
-                android:background="@android:color/transparent"
-                app:menu="@menu/menu"/>
-        </com.google.android.material.bottomappbar.BottomAppBar>
+<!--          >-->
+<!--            <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/bottomNavigationView"-->
+<!--                app:labelVisibilityMode="labeled"-->
+<!--                app:tint="?attr/iconColor"-->
+<!--                android:background="@android:color/transparent"-->
+<!--                app:menu="@menu/menu"/>-->
+<!--        </com.google.android.material.bottomappbar.BottomAppBar>-->
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
    </androidx.constraintlayout.widget.ConstraintLayout>

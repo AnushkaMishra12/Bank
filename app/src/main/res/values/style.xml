@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#CF0E0E</item>
+        <item name="colorPrimaryDark">@color/colorOnPrimary_dark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="appWindowBackground">@color/colorAccent</item>
+        <item name="cardBackground">@color/colorAccent</item>
+        <item name="cardBackground_Sign">@color/colorOnPrimary</item>
+        <item name="textColor">@color/black</item>
+        <item name="iconColor">#536DFE</item>
+        <item name="buttonBackground">#070606</item>
+        <item name="buttonTextColor">@color/colorAccent</item>
+        <item name="msgText">@color/colorPrimary</item>
+
+        <item name="android:windowDrawsSystemBarBackgrounds" tools:targetApi="lollipop">true</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@android:color/darker_gray</item>
+    </style>
+    <style name="Theme1" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#212121</item>
+        <item name="colorPrimaryDark">#000000</item>
+        <item name="colorAccent">#30E57E</item>
+        <item name="appWindowBackground">#A4E3BF</item>
+        <item name="cardBackground">#BFE6D0</item>
+        <item name="iconColor">#30E57E</item>
+        <item name="textColor">#01220F</item>
+        <item name="buttonBackground">#01220F</item>
+    </style>
+    <style name="Theme2" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#F10000</item>
+        <item name="colorPrimaryDark">#6E0000</item>
+        <item name="colorAccent">#F10000</item>
+        <item name="appWindowBackground">#FF5252</item>
+        <item name="cardBackground">#FF5252</item>
+        <item name="iconColor">#590415</item>
+        <item name="textColor">#090606</item>
+        <item name="buttonBackground">#3E0808</item>
+    </style>
+    <style name="Theme3" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#79008E</item>
+        <item name="colorPrimaryDark">#5C006C</item>
+        <item name="colorAccent">#79008E</item>
+        <item name="appWindowBackground">#9A47A8</item>
+        <item name="cardBackground">#D5ABDC</item>
+        <item name="iconColor">#290A2E</item>
+        <item name="textColor">#070707</item>
+        <item name="buttonBackground">#150119</item>
+    </style>
+    <style name="Theme4" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#009688</item>
+        <item name="colorPrimaryDark">#00655C</item>
+        <item name="colorAccent">#009688</item>
+        <item name="appWindowBackground">#8FC8BA</item>
+        <item name="cardBackground">#B4D6C3</item>
+        <item name="iconColor">#052920</item>
+        <item name="textColor">#7EA89E</item>
+        <item name="buttonBackground">#05513F</item>
+    </style>
+    <style name="Theme5" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#777777</item>
+        <item name="colorPrimaryDark">#303030</item>
+        <item name="colorAccent">#777777</item>
+        <item name="appWindowBackground">#2E302F</item>
+        <item name="cardBackground">#585958</item>
+        <item name="iconColor">#070707</item>
+        <item name="textColor">#F2F4F3</item>
+        <item name="buttonBackground">#111211</item>
+    </style>
+    <style name="Theme6" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#FF5722</item>
+        <item name="colorPrimaryDark">#D53300</item>
+        <item name="colorAccent">#FF784D</item>
+        <item name="appWindowBackground">#BA8170</item>
+        <item name="cardBackground">#A5867C</item>
+        <item name="iconColor">#371207</item>
+        <item name="textColor">#090808</item>
+        <item name="buttonBackground">#651B03</item>
+    </style>
+    <style name="Theme7" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#E91E63</item>
+        <item name="colorPrimaryDark">#C80145</item>
+        <item name="colorAccent">#FF3C7F</item>
+        <item name="appWindowBackground">#88485E</item>
+        <item name="cardBackground">#C38399</item>
+        <item name="iconColor">#4C0D22</item>
+        <item name="textColor">#F7FAF8</item>
+        <item name="buttonBackground">#2B010F</item>
+    </style>
+</resources>

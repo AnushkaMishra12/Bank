@@ -1,8 +1,12 @@
 package com.example.bank;
 
-import android.app.Fragment;
+import static com.example.bank.ThemeManager.setCustomizedThemes;
+import static com.example.bank.ThemeStorage.getThemeColor;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,11 +29,17 @@ public class DashBoardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setCustomizedThemes(this,getThemeColor(this));
         setContentView(R.layout.activity_dash_board);
+
+        Window w = getWindow();
+        w.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        w.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+
         recyclerView = findViewById(R.id.reward_recycler);
         trendRecycler = findViewById(R.id.trend_recycler);
         bobRecycler=findViewById(R.id.bob_recycler);
-        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+       // bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
         setting = findViewById(R.id.setting);
 
@@ -38,7 +48,7 @@ public class DashBoardActivity extends AppCompatActivity {
             startActivity(i);
         });
 
-        bottomNavigationView.setBackground(null);
+       // bottomNavigationView.setBackground(null);
 
         ArrayList<BannerData> list = new ArrayList<>();
 

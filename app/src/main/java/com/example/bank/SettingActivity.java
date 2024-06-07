@@ -1,99 +1,63 @@
 package com.example.bank;
 
-import android.annotation.TargetApi;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Paint;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.OvalShape;
-import android.os.Build;
-import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+import static com.example.bank.DialogManager.showCustomAlertDialog;
+import static com.example.bank.ThemeManager.setCustomizedThemes;
+import static com.example.bank.ThemeStorage.getThemeColor;
+import static com.example.bank.ThemeStorage.setThemeColor;
 
-import com.skydoves.colorpickerpreference.ColorPickerDialog;
-import com.turkialkhateeb.materialcolorpicker.ColorChooserDialog;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 
 public class SettingActivity extends AppCompatActivity {
-    SharedPreferences sharedPreferences, app_preferences;
-    SharedPreferences.Editor editor;
+    private static final String TAG = "SettingActivity";
     Button button;
-    Methods methods;
+    TextView color_choose;
 
-    int appTheme;
-    int themeColor;
-    int appColor;
-    Constant constant;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        app_preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        appColor = app_preferences.getInt("color", 0);
-        appTheme = app_preferences.getInt("theme", 0);
-        themeColor = appColor;
-        Constant.color = appColor;
-
-        if (themeColor == 0){
-            setTheme(Constant.theme);
-        }else if (appTheme == 1){
-            setTheme(Constant.theme);
-        }else{
-            setTheme(appTheme);
-        }
+        setCustomizedThemes(this, getThemeColor(this));
         setContentView(R.layout.activity_setting);
 
-        final Toolbar toolbar = findViewById(R.id.toolbar_setting);
-        toolbar.setTitle("Settings");
-        toolbar.setBackgroundColor(Constant.color);
+        Window w = getWindow();
+        w.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        w.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
 
-        methods = new Methods();
+        color_choose = findViewById(R.id.color_choose);
         button = findViewById(R.id.button_color);
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        editor = sharedPreferences.edit();
-
-        colorize();
-
         button.setOnClickListener(v -> {
-            ColorChooserDialog dialog = new ColorChooserDialog(SettingActivity.this);
-            dialog.setTitle("Select");
-            dialog.setColorListener((v1, color) -> {
-                colorize();
-                Constant.color = color;
-                methods.setColorTheme();
-                editor.putInt("color", color);
-                editor.putInt("theme",Constant.theme);
-                editor.commit();
+            Intent i = new Intent(SettingActivity.this,DashBoardActivity.class);
+            startActivity(i);
+            finish();
+        });
+        color_choose.setOnClickListener(v -> {
+            chooseColor();
+        });
 
-                Intent intent = new Intent(SettingActivity.this, LoginActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-            });
 
-            dialog.show();
+    }
+
+    private void chooseColor() {
+        showCustomAlertDialog(this, chosenColor -> {
+            if (chosenColor.equals(getThemeColor(getApplicationContext()))) {
+                Toast.makeText(this, "already choosed color", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            Log.d(TAG, chosenColor);
+            setThemeColor(getApplicationContext(), chosenColor);
+            setCustomizedThemes(getApplicationContext(), chosenColor);
+            recreate();
+
         });
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        if (item.getItemId() == android.R.id.home) {
-            onBackPressed();
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    private void colorize(){
-        ShapeDrawable d = new ShapeDrawable(new OvalShape());
-        d.setBounds(58, 58, 58, 58);
-
-        d.getPaint().setStyle(Paint.Style.FILL);
-        d.getPaint().setColor(Constant.color);
-
-        button.setBackground(d);
-    }
 }

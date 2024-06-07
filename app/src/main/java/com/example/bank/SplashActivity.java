@@ -1,5 +1,8 @@
 package com.example.bank;
 
+import static com.example.bank.ThemeManager.setCustomizedThemes;
+import static com.example.bank.ThemeStorage.getThemeColor;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -21,11 +24,11 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setCustomizedThemes(this,getThemeColor(this));
         setContentView(R.layout.activity_splash);
         Window w = getWindow();
         w.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         w.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-
         text=findViewById(R.id.app_name);
 
 
