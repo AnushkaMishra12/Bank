@@ -6,14 +6,21 @@ import static com.example.bank.ThemeManager.setCustomizedThemes;
 import static com.example.bank.ThemeStorage.getThemeColor;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,20 +42,44 @@ public class LoginActivity extends AppCompatActivity {
     private final Executor executor = Executors.newSingleThreadExecutor();
     RecyclerView banner;
     ImageView auth;
+    TextView text;
+
+    Dialog customDialog;
+    Button submit;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setCustomizedThemes(this,getThemeColor(this));
+        setCustomizedThemes(this, getThemeColor(this));
         setContentView(R.layout.login_activity);
 
         getSupportActionBar().hide();
 
-        banner=findViewById(R.id.banner);
-        auth=findViewById(R.id.authenticate);
+        banner = findViewById(R.id.banner);
+        auth = findViewById(R.id.authenticate);
+        text = findViewById(R.id.text);
+
+
         auth.setOnClickListener(v -> checkAndAuthenticate());
         if (biometricPrompt == null) {
             biometricPrompt = new BiometricPrompt(this, executor, callback);
         }
+        text.setOnClickListener(v -> customDialog.show());
+
+        customDialog = new Dialog(LoginActivity.this);
+        customDialog.setContentView(R.layout.custom_dailog);
+        final Window window = customDialog.getWindow();
+        customDialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT);
+        window.clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        submit = customDialog.findViewById(R.id.btnSubmit);
+
+
+        submit.setOnClickListener(view -> {
+            Toast.makeText(LoginActivity.this, "You Click On Submit Button", Toast.LENGTH_SHORT).show();
+            customDialog.dismiss();
+        });
 
         ArrayList<BannerData> list = new ArrayList<>();
 
@@ -113,8 +144,8 @@ public class LoginActivity extends AppCompatActivity {
     private void snack(String text) {
         View view = findViewById(R.id.view);
         Snackbar snackbar = Snackbar.make(view, text, Snackbar.LENGTH_LONG);
+        snackbar.setTextColor(getResources().getColor(R.color.white));
         snackbar.setBackgroundTint(getResources().getColor(R.color.colorPrimary));
-        snackbar.setTextColor(getResources().getColor(R.color.colorAccent));
         snackbar.show();
     }
 
@@ -129,7 +160,7 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
             snack("Authenticated");
-            Intent i =new Intent(LoginActivity.this,DashBoardActivity.class);
+            Intent i = new Intent(LoginActivity.this, DashBoardActivity.class);
             startActivity(i);
         }
 

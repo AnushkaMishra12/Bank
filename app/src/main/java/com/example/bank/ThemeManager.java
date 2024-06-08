@@ -14,7 +14,9 @@ public class ThemeManager {
             case "red":
                 context.setTheme(R.style.BlueTheme);
                 break;
+
         }
+
     }
 
 }

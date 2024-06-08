@@ -27,7 +27,6 @@ public class SplashActivity extends AppCompatActivity {
         w.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         text=findViewById(R.id.app_name);
 
-
         Thread thread= new Thread(() -> {
 
             try {

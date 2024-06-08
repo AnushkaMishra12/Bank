@@ -35,8 +35,6 @@ public class SettingActivity extends AppCompatActivity {
         color_choose.setOnClickListener(v -> {
             chooseColor();
         });
-
-
     }
 
     private void chooseColor() {

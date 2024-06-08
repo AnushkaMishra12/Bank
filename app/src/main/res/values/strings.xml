@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Bank</string>
     <string name="authenticate_with_biometric">AUTHENTICATE WITH BIOMETRIC</string>
-    <string name="use_login_pin_or_biometric">Use login PIN or biometric</string>
+    <string name="use_login_pin_or_biometric">Use <u><b>PIN-code</b></u> or biometric</string>
     <string name="unlock_forget_login_pin">Unlock/Forget login PIN?</string>
     <string name="_1234">1234</string>
     <string name="hi_users">Hi Users,</string>
@@ -24,4 +24,7 @@
     <string name="black">black</string>
     <string name="blue">blue</string>
     <string name="purple">purple</string>
+    <string name="enter_phone_no">Enter Phone No.</string>
+    <string name="enter_phoneno">Enter PhoneNo</string>
+    <string name="login_with_phone">Login With Phone</string>
 </resources>
