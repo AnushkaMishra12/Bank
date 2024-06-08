@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Constant {
 
     public static ArrayList<BannerData> getBanner() {
-        ArrayList<BannerData> list = new ArrayList<BannerData>();
+        ArrayList<BannerData> list = new ArrayList<>();
         BannerData data = new BannerData(R.drawable.img_3);
         list.add(data);
         BannerData data1 = new BannerData(R.drawable.img_3);
@@ -16,7 +16,7 @@ public class Constant {
     }
 
     public static ArrayList<BobData> getBob() {
-        ArrayList<BobData> list = new ArrayList<BobData>();
+        ArrayList<BobData> list = new ArrayList<>();
         BobData data = new BobData(R.drawable.qr);
         list.add(data);
         BobData data1 = new BobData(R.drawable.qr);
@@ -27,7 +27,7 @@ public class Constant {
     }
 
     public static ArrayList<trend_data> getTrend() {
-        ArrayList<trend_data> list = new ArrayList<trend_data>();
+        ArrayList<trend_data> list = new ArrayList<>();
         trend_data data = new trend_data(R.drawable.qr, "QR Scan");
         list.add(data);
         trend_data data1 = new trend_data(R.drawable.qr, "QR Scan");
@@ -36,5 +36,4 @@ public class Constant {
         list.add(data2);
         return list;
     }
-
 }
