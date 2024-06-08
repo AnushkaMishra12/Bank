@@ -35,7 +35,7 @@ public class SplashActivity extends AppCompatActivity {
             catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            animSlide = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_down);
+            animSlide = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
             Intent intent=new Intent(SplashActivity.this, LoginActivity.class);
             text.startAnimation(animSlide);
             startActivity(intent);

@@ -27,4 +27,7 @@
     <string name="enter_phone_no">Enter Phone No.</string>
     <string name="enter_phoneno">Enter PhoneNo</string>
     <string name="login_with_phone">Login With Phone</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="set">Setting</string>
 </resources>

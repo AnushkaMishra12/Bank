@@ -3,13 +3,19 @@ package com.example.bank;
 import static com.example.bank.ThemeManager.setCustomizedThemes;
 import static com.example.bank.ThemeStorage.getThemeColor;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,30 +30,33 @@ public class DashBoardActivity extends AppCompatActivity {
     RecyclerView trendRecycler;
     RecyclerView bobRecycler;
     BottomNavigationView bottomNavigationView;
+    CoordinatorLayout coordinatorLayout;
     ImageView setting;
+    Fragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setCustomizedThemes(this,getThemeColor(this));
+
+        setCustomizedThemes(this, getThemeColor(this));
+
         setContentView(R.layout.activity_dash_board);
+
         getSupportActionBar().hide();
+
+
         recyclerView = findViewById(R.id.reward_recycler);
         trendRecycler = findViewById(R.id.trend_recycler);
-        bobRecycler=findViewById(R.id.bob_recycler);
-       // bottomNavigationView = findViewById(R.id.bottomNavigationView);
-
+        bobRecycler = findViewById(R.id.bob_recycler);
+        coordinatorLayout = findViewById(R.id.container);
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
         setting = findViewById(R.id.setting);
+        bottomNavigationView.setOnNavigationItemSelectedListener(selectedListener);
+        bottomNavigationView.setSelectedItemId(R.id.mHome);
 
-        setting.setOnClickListener(v -> {
-            Intent i = new Intent(getApplicationContext(), SettingActivity.class);
-            startActivity(i);
-        });
 
-       // bottomNavigationView.setBackground(null);
 
         ArrayList<BannerData> list = new ArrayList<>();
-
         list.add(new BannerData(R.drawable.img_3));
         list.add(new BannerData(R.drawable.img_3));
         list.add(new BannerData(R.drawable.img_3));
@@ -77,10 +86,10 @@ public class DashBoardActivity extends AppCompatActivity {
 
         ArrayList<trend_data> list1 = new ArrayList<>();
 
-        list1.add(new trend_data(R.drawable.qr,"QR Scan"));
-        list1.add(new trend_data(R.drawable.qr,"QR icon"));
-        list1.add(new trend_data(R.drawable.qr,"QR Scan"));
-        list1.add(new trend_data(R.drawable.qr,"QR icon"));
+        list1.add(new trend_data(R.drawable.qr, "QR Scan"));
+        list1.add(new trend_data(R.drawable.qr, "QR icon"));
+        list1.add(new trend_data(R.drawable.qr, "QR Scan"));
+        list1.add(new trend_data(R.drawable.qr, "QR icon"));
 
         TrendsAdapter trendsAdapter = new TrendsAdapter(list1);
         trendRecycler.setAdapter(trendsAdapter);
@@ -101,5 +110,17 @@ public class DashBoardActivity extends AppCompatActivity {
         bobRecycler.setHasFixedSize(true);
         GridLayoutManager layoutManager = new GridLayoutManager(this, COLUMN_COUNT3, GridLayoutManager.HORIZONTAL, false);
         bobRecycler.setLayoutManager(layoutManager);
+
+        setting.setOnClickListener(v -> {
+            Intent i = new Intent(getApplicationContext(), SettingActivity.class);
+            startActivity(i);
+        });
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener selectedListener = menuItem -> {
+        if (menuItem.getItemId() == R.id.mHome) {
+            return true;
+        }
+        return false;
+    };
 }

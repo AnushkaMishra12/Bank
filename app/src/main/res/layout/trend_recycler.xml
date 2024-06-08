@@ -18,9 +18,9 @@
             android:id="@+id/trend_im"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/qr"
+            android:src="@drawable/upi"
             android:padding="15dp"
-            app:tint="?attr/buttonBackground"
+            app:tint="?attr/iconColor"
             android:scaleType="centerInside"/>
 
     </androidx.cardview.widget.CardView>

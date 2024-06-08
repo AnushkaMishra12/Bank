@@ -35,18 +35,18 @@ public class SettingActivity extends AppCompatActivity {
         color_choose.setOnClickListener(v -> {
             chooseColor();
         });
+
     }
 
     private void chooseColor() {
         showCustomAlertDialog(this, chosenColor -> {
             if (chosenColor.equals(getThemeColor(getApplicationContext()))) {
-              recreate();
+                recreate();
             }
             Log.d(TAG, chosenColor);
             setThemeColor(getApplicationContext(), chosenColor);
             setCustomizedThemes(getApplicationContext(), chosenColor);
             recreate();
-
         });
     }
 

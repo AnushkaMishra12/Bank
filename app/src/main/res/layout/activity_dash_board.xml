@@ -9,16 +9,15 @@
     tools:context=".DashBoardActivity">
 
 
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/appWindowBackground"
+        android:elevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:elevation="8dp">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:layout_width="100dp"
@@ -47,165 +46,167 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_gravity="end"
-            app:tint="?attr/iconColor"
             android:layout_margin="10dp"
-            android:src="@drawable/seach" />
+            android:src="@drawable/seach"
+            app:tint="?attr/msgText" />
 
     </androidx.appcompat.widget.Toolbar>
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="80dp"
-      >
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/nested_scroll"
-        android:layout_marginBottom="130dp"
-        >
+        android:id="@+id/container"
+        android:layout_marginTop="70dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/toolbar">
-
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="150dp"
-           android:layout_marginEnd="20dp"
-           android:layout_marginStart="20dp"
-           android:elevation="8dp"
-           android:padding="20dp"
-           android:gravity="center"
-           android:orientation="vertical"
-           app:cardCornerRadius="30dp"
-           android:background="@drawable/card_bg"
-           app:cardUseCompatPadding="true">
-
-       <TextView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text="@string/available_balance"
-           android:textSize="18sp"
-           android:fontFamily="sans-serif"
-           android:textStyle="bold"
-           android:padding="8dp"
-           android:textAlignment="center"
-           android:textColor="@color/white"/>
-
-           <TextView
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:text="@string/x_xx_xxx"
-               android:padding="8dp"
-               android:textStyle="bold"
-               android:fontFamily="sans-serif"
-               android:textAlignment="center"
-               android:textColor="@color/white"/>
-
-       </LinearLayout>
-
-        <LinearLayout
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nested_scroll"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:layout_marginBottom="80dp">
 
-
-            <TextView
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/view_all_accounts"
-                android:textAlignment="center"
-                android:layout_margin="10dp"
-                android:padding="8dp"
-                android:textSize="15sp"
-                android:textColor="?attr/textColor"
-                android:background="@drawable/tv_bg"/>
+                android:orientation="vertical"
+                android:paddingTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/toolbar">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_margin="10dp"
-                android:textAlignment="center"
-                android:textSize="15sp"
-                android:text="@string/transaction_history"
-                android:textColor="?attr/textColor"
-                android:padding="8dp"
-                android:background="@drawable/tv_bg"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/card_bg"
+                    android:elevation="8dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    app:cardCornerRadius="30dp"
+                    app:cardUseCompatPadding="true">
 
-        </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:padding="8dp"
+                        android:text="@string/available_balance"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/reward_recycler"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:padding="8dp"
+                        android:text="@string/x_xx_xxx"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="@string/what_s_trending"
-            android:layout_margin="20dp"
-            android:textSize="15sp"
-            android:fontFamily="sans-serif-medium"
-            android:textColor="?attr/textColor"/>
+                </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/trend_recycler"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="@string/my_bob"
-            android:layout_margin="20dp"
-            android:textSize="15sp"
-            android:fontFamily="sans-serif-medium"
-            android:textColor="?attr/textColor"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/bob_recycler"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/tc_bg"
+                        android:padding="8dp"
+                        android:text="@string/view_all_accounts"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
 
-    </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/tc_bg"
+                        android:padding="8dp"
+                        android:text="@string/transaction_history"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/reward_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/what_s_trending"
+                    android:textColor="?attr/textColor"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/trend_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/my_bob"
+                    android:textColor="?attr/textColor"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/bob_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
         <ImageView
             android:id="@+id/setting"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="center|bottom"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="30dp"
             android:background="@drawable/card_bg"
+            android:backgroundTint="?attr/msgText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:elevation="10dp"
-            android:src="@drawable/setting"
             android:padding="15dp"
+            android:src="@drawable/setting"
             app:tint="?attr/buttonBackground" />
 
-<!--        <com.google.android.material.bottomappbar.BottomAppBar-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:id="@+id/bottomAppBar"-->
-<!--            android:layout_gravity="bottom"-->
-<!--            app:tint="?attr/iconColor"-->
-<!--            android:background="@color/white"-->
-
-<!--          >-->
-<!--            <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:id="@+id/bottomNavigationView"-->
-<!--                app:labelVisibilityMode="labeled"-->
-<!--                app:tint="?attr/iconColor"-->
-<!--                android:background="@android:color/transparent"-->
-<!--                app:menu="@menu/menu"/>-->
-<!--        </com.google.android.material.bottomappbar.BottomAppBar>-->
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-   </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/menu"
+        android:background="?attr/appWindowBackground"
+        android:padding="10dp"
+        android:elevation="8dp"
+        app:itemTextColor="?attr/textColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/bottom_navigation"
+        app:labelVisibilityMode="labeled"
+        app:itemIconTint="?attr/msgText"
+        >
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+</androidx.constraintlayout.widget.ConstraintLayout>
