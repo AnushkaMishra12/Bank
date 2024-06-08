@@ -28,7 +28,7 @@ public class SettingActivity extends AppCompatActivity {
         color_choose = findViewById(R.id.color_choose);
         button = findViewById(R.id.button_color);
         button.setOnClickListener(v -> {
-            Intent i = new Intent(SettingActivity.this,DashBoardActivity.class);
+            Intent i = new Intent(SettingActivity.this, LoginActivity.class);
             startActivity(i);
             finish();
         });

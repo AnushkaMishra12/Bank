@@ -35,4 +35,5 @@
         android:src="@drawable/bob_logo1"
         app:tint="@color/white"
         tools:ignore="ContentDescription" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

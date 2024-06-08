@@ -162,6 +162,7 @@ public class LoginActivity extends AppCompatActivity {
             snack("Authenticated");
             Intent i = new Intent(LoginActivity.this, DashBoardActivity.class);
             startActivity(i);
+            finish();
         }
 
         @Override
