@@ -30,4 +30,13 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="set">Setting</string>
+    <string name="cards">Cards</string>
+    <string name="upi">UPI</string>
+    <string name="home">Home</string>
+    <string name="mo">More</string>
+    <string name="verify_mobile_number">Verify Mobile Number</string>
+    <string name="to_confirm">To Confirm mobile Number ,we need to send an SMS from your phone.\n</string>
+    <string name="fetch_your_card">Fetch your card deatils by clicking on view cards</string>
+    <string name="view_card">View Cards</string>
+    <string name="quick_actions">Quick Actions</string>
 </resources>

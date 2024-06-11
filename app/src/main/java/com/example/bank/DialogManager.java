@@ -20,6 +20,7 @@ public class DialogManager {
         blackColor.setOnClickListener(view -> {
             callback.onChosen(blackColor.getText().toString());
             dialog.cancel();
+
         });
         final TextView blueColor = dialog.findViewById(R.id.blueColor);
         blueColor.setOnClickListener(view -> {

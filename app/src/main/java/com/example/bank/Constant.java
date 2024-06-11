@@ -12,6 +12,8 @@ public class Constant {
         list.add(data1);
         BannerData data2 = new BannerData(R.drawable.img_3);
         list.add(data2);
+        BannerData data3 = new BannerData(R.drawable.img_3);
+        list.add(data3);
         return list;
     }
 
@@ -23,6 +25,8 @@ public class Constant {
         list.add(data1);
         BobData data2 = new BobData(R.drawable.qr);
         list.add(data2);
+        BobData data3 = new BobData(R.drawable.qr);
+        list.add(data3);
         return list;
     }
 
@@ -34,6 +38,8 @@ public class Constant {
         list.add(data1);
         trend_data data2 = new trend_data(R.drawable.qr, "QR Scan");
         list.add(data2);
+        trend_data data3 = new trend_data(R.drawable.qr, "QR Scan");
+        list.add(data3);
         return list;
     }
 }

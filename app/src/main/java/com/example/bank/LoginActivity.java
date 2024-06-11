@@ -77,8 +77,9 @@ public class LoginActivity extends AppCompatActivity {
 
 
         submit.setOnClickListener(view -> {
-            Toast.makeText(LoginActivity.this, "You Click On Submit Button", Toast.LENGTH_SHORT).show();
+           Intent i = new Intent(getApplicationContext(), DashBoardActivity.class);
             customDialog.dismiss();
+            startActivity(i);
         });
 
         ArrayList<BannerData> list = new ArrayList<>();

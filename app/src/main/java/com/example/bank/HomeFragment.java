@@ -30,10 +30,8 @@ public class HomeFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState)
-    {
+    public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
 
         RecyclerView recyclerView = view.findViewById(R.id.reward_recycler);
         RecyclerView bobRecycler = view.findViewById(R.id.bob_recycler);
@@ -58,6 +56,8 @@ public class HomeFragment extends Fragment {
             }
 
         }, 0, 5000);
+
+
 
         ArrayList<BobData> list2 = Constant.getBob();
         BobAdapter bobAdapter = new BobAdapter(list2);

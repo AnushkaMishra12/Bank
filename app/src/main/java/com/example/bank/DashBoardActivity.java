@@ -23,6 +23,7 @@ public class DashBoardActivity extends AppCompatActivity implements BottomNaviga
         super.onCreate(savedInstanceState);
         setCustomizedThemes(this, getThemeColor(this));
         setContentView(R.layout.activity_dash_board);
+
         getSupportActionBar().hide();
 
         coordinatorLayout = findViewById(R.id.container);
@@ -39,9 +40,10 @@ public class DashBoardActivity extends AppCompatActivity implements BottomNaviga
     }
 
     HomeFragment firstFragment = new HomeFragment();
-    ProfileFragment profileFragment = new ProfileFragment();
-    SearchFragment searchFragment = new SearchFragment();
-    ScannerFragment scannerFragment = new ScannerFragment();
+    UPIFragment upiFragment = new UPIFragment();
+    CardsFragment cardsFragment = new CardsFragment();
+
+    MoreFragment moreFragment = new MoreFragment();
 
 
     @Override
@@ -58,26 +60,26 @@ public class DashBoardActivity extends AppCompatActivity implements BottomNaviga
                         .replace(R.id.container, firstFragment)
                         .commit();
                 return true;
-            case R.id.mPerson:
+            case R.id.mUPI:
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.container, profileFragment)
+                        .replace(R.id.container, upiFragment)
                         .commit();
                 return true;
-            case R.id.mSearch:
+            case R.id.mCards:
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.container, searchFragment)
+                        .replace(R.id.container, cardsFragment)
                         .commit();
                 return true;
-            case R.id.mSetting:
+
+            case R.id.mMore:
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.container, scannerFragment)
+                        .replace(R.id.container, moreFragment)
                         .commit();
                 return true;
         }
         return false;
-
     }
 }

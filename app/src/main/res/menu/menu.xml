@@ -5,25 +5,25 @@
         android:id="@+id/mHome"
         android:icon="@drawable/home"
         app:tint="?attr/iconColor"
-        android:title="Home" />
+        android:title="@string/home" />
     <item
-        android:id="@+id/mSearch"
+        android:id="@+id/mUPI"
         android:icon="@drawable/upi"
         app:tint="?attr/iconColor"
-        android:title="Search" />
+        android:title="@string/upi" />
     <item
         android:id="@+id/fab"
         android:title=""
         android:enabled="false"/>
 
     <item
-        android:id="@+id/mPerson"
+        android:id="@+id/mCards"
         android:icon="@drawable/cards"
         app:tint="?attr/iconColor"
-        android:title="Profile" />
+        android:title="@string/cards" />
     <item
-        android:id="@+id/mSetting"
-        android:icon="@drawable/qr"
+        android:id="@+id/mMore"
+        android:icon="@drawable/more"
         app:tint="?attr/iconColor"
-        android:title="Scan" />
+        android:title="@string/mo" />
 </menu>

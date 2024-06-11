@@ -7,9 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class ScannerFragment extends Fragment {
+public class MoreFragment extends Fragment {
 
-    public ScannerFragment() {
+    public MoreFragment() {
 
     }
 
@@ -18,6 +18,6 @@ public class ScannerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.fragment_scanner, container, false);
+        return inflater.inflate(R.layout.fragment_more, container, false);
     }
 }
